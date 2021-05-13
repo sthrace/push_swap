@@ -23,7 +23,7 @@ RM = rm -rf
 all:		$(NAME)
 
 $(NAME):	library COMP $(OBJS) DONE
-			@$(CC) $(CFLAGS) -o $(NAME) $(LIBFT)  $(OBJS)
+			@$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFT)
 
 %.o: %.c
 			$(CC) -c $(CFLAGS) -o $@ $<
