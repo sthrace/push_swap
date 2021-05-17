@@ -1,17 +1,24 @@
 NAME = push_swap
+NAME_C = checker
 
-SRCS = srcs/push_swap.c\
+SRCS = srcs/push_swap.c \
 		srcs/exit.c \
-		srcs/validator.c
-		# srcs/common.c \
-		# srcs/push.c \
-		# srcs/revrotate.c \
-		# srcs/rotate.c \
-		# srcs/swap.c \
-		# srcs/utils.c \
-		# srcs/algorithm.c
+		srcs/validator.c \
+		srcs/utils.c \
+		srcs/sort.c \
+		srcs/operations.c \
+		srcs/alg_3_5.c \
+		srcs/alg_100.c
+
+SRCS_C = srcs/checker.c \
+		srcs/validator.c \
+		srcs/exit.c \
+		srcs/utils.c \
+		srcs/operations.c \
+		srcs/checker_utils.c
 
 OBJS = $(SRCS:.c=.o)
+OBJS_C = $(SRCS_C:.c=.o)
 LIBFT_DIR	= libft/
 LIBFT		= $(LIBFT_DIR)libft.a
 
@@ -22,8 +29,11 @@ RM = rm -rf
 
 all:		$(NAME)
 
-$(NAME):	library COMP $(OBJS) DONE
+$(NAME):	library COMP $(OBJS) $(NAME_C) DONE
 			@$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFT)
+
+$(NAME_C):	COMP $(OBJS_C) DONE
+			@$(CC) $(CFLAGS) -o $(NAME_C) $(OBJS_C) $(LIBFT)
 
 %.o: %.c
 			$(CC) -c $(CFLAGS) -o $@ $<

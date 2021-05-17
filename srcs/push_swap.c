@@ -1,20 +1,59 @@
 #include "../includes/push_swap.h"
 
+static void	populate_stacks(t_array *data, int argc)
+{
+	int	i;
+
+	i = -1;
+	while (++i < data->size)
+	{
+		data->stack_a[i] = ft_atoi(data->argv[i]);
+		if (argc == 2)
+			free(data->argv[i]);
+		data->stack_b[i] = 0;
+	}
+	if (argc == 2)
+		free(data->argv);
+}
+
+static void	init_array(t_array *data)
+{
+	data->stack = (unsigned long long *)malloc(sizeof(unsigned long long) * data->size);
+	data->stack_a = (int *)ft_calloc(data->size, sizeof(int));
+    data->stack_b = (int *)ft_calloc(data->size, sizeof(int));
+	if (data->stack == NULL || data->stack_a == NULL || data->stack_b == NULL)
+		ft_exit();
+    data->size_a = data->size;
+    data->size_b = 0;
+}
+
+static void	ft_validate_args(t_array *data, int argc, char **argv)
+{
+	int	i;
+
+	if (data == NULL)
+        ft_exit();
+	if (argc == 1)
+        ft_exit();
+	if (argc == 2)
+		data->argv = ft_split(argv[1], 32);
+	if (argc > 2)
+		data->argv = argv + 1;
+	data->size = 0;
+	i = -1;
+	while (data->argv[++i] != NULL)
+		data->size++;
+}
+
 int     main(int argc, char **argv)
 {
     t_array     *data;
 
-    if (!(data = (t_array *)malloc(sizeof(t_array))))
-        ft_exit(0);
-    data->size = argc - 1;
-    data->stack = argv;
-    if (argc == 1)
-        ft_exit(1);
-    else if (argc == 2)
-        ft_exit(2);
-    else
-    {
-		validate_input(data);
-    }
+	data = (t_array *)malloc(sizeof(t_array));
+	ft_validate_args(data, argc, argv);
+    init_array(data);
+	validate_input(data);
+	populate_stacks(data, argc);
+	ft_sort(data);
     return (0);
 }
