@@ -2,7 +2,7 @@
 
 void	ft_output(t_array *data)
 {
-	if (ft_issorted(data->stack_a, data->size_a) && data->size_b == 0)
+	if (ft_issorted(data->stack_a, data->size_a, 1) && data->size_b == 0)
 		ft_putendl_fd("\033[1;32mOK\033[0m", 1);
 	else
 		ft_putendl_fd("\033[1;31mKO\033[0m", 2);

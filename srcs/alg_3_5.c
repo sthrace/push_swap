@@ -6,21 +6,21 @@ static void	ft_sort5_utils(t_array *data, int type)
 	{
 		if (data->stack_a[data->size_a - 1] == ft_minmax(data->stack_a, data->size_a, 0, -1))
 			ft_revrotate(data, 'a', 1);
-		if (!ft_issorted(data->stack_a, data->size_a))
+		if (!ft_issorted(data->stack_a, data->size_a, 1))
 			ft_push(data, 'b', 1);
 	}
 	if (type == 2)
 	{
 		while (ft_position(data->stack_a, data->size_a, ft_minmax(data->stack_a, data->size_a, 0, -1)))
 			ft_rotate(data, 'a', 1);
-		if (!ft_issorted(data->stack_a, data->size_a))
+		if (!ft_issorted(data->stack_a, data->size_a, 1))
 			ft_push(data, 'b', 1);
 	}
 	if (type == 3)
 	{
 		while (ft_position(data->stack_a, data->size_a, ft_minmax(data->stack_a, data->size_a, 0, -1)))
 			ft_revrotate(data, 'a', 1);
-		if (!ft_issorted(data->stack_a, data->size_a))
+		if (!ft_issorted(data->stack_a, data->size_a, 1))
 			ft_push(data, 'b', 1);
 	}
 }
@@ -29,7 +29,7 @@ void	ft_sort_5(t_array *data)
 {
 	while (1)
 	{
-		if (ft_issorted(data->stack_a, data->size_a))
+		if (ft_issorted(data->stack_a, data->size_a, 1))
 			break ;
 		if ((data->stack_a[0] == ft_minmax(data->stack_a, data->size_a, 0, -1)) || (data->stack_a[data->size_a - 1] == ft_minmax(data->stack_a, data->size_a, 0, -1)))
 			ft_sort5_utils(data, 1);
@@ -46,7 +46,7 @@ void	ft_sort_3(t_array *data)
 {
 	while (1)
 	{
-		if (ft_issorted(data->stack_a, data->size_a))
+		if (ft_issorted(data->stack_a, data->size_a, 1))
 			break ;
 		if (data->stack_a[0] == ft_minmax(data->stack_a, data->size_a, 1, -1))
 			ft_rotate(data, 'a', 1);

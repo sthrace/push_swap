@@ -1,13 +1,25 @@
 #include "../includes/push_swap.h"
 
-int	ft_issorted(int *stack, int size)
+int	ft_issorted(int *stack, int size, int type)
 {
 	int	i;
 
-	i = -1;
-	while (++i < size)
-		if (i > 0 && (stack[i] < stack[i - 1]))
-			return (0);
+	if (type == 1)
+	{
+		i = -1;
+		while (++i < size)
+			if (i > 0 && (stack[i] < stack[i - 1]))
+				return (0);
+		return (1);
+	}
+	if (type == 2)
+	{
+		i = -1;
+		while (++i < size)
+			if (i > 0 && (stack[i] > stack[i - 1]))
+				return (0);
+		return (1);
+	}
 	return (1);
 }
 
@@ -51,11 +63,11 @@ int	ft_minmax(int *stack, int size, int type, int i)
 	return (0);
 }
 
-void	sort_input(t_array *data, unsigned long long *stack, int size)
+void	ft_sort_array(t_array *data, int *stack, int size)
 {
 	int			i;
 	int			j;
-	long		tmp;
+	int			tmp;
 
 	j = 0;
 	while (j < size - 1)
@@ -73,5 +85,8 @@ void	sort_input(t_array *data, unsigned long long *stack, int size)
 		}
 		j++;
 	}
-	data->median = stack[size / 2];
+	if (data->size % 2)
+		data->median = stack[size / 2 + 1];
+	else
+		data->median = stack[size / 2];
 }

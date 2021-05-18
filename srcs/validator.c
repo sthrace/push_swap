@@ -2,8 +2,26 @@
 
 static void	check_dups(t_array *data)
 {
-	int	i;
+	int			i;
+	int			j;
+	long		tmp;
 
+	j = 0;
+	while (j < data->size - 1)
+	{
+		i = 0;
+		while (i < data->size - j - 1)
+		{
+			if (data->stack[i] > data->stack[i + 1])
+			{
+				tmp = data->stack[i];
+				data->stack[i] = data->stack[i + 1];
+				data->stack[i + 1] = tmp;
+			}
+			i++;
+		}
+		j++;
+	}
 	i = -1;
 	while (++i < data->size)
 		if (i > 0 && (data->stack[i] == data->stack[i - 1]))
@@ -46,7 +64,6 @@ void	validate_input(t_array *data)
 		}
 	}
 	stack_input(data);
-	sort_input(data, data->stack, data->size);
 	check_dups(data);
 	if (data->size == 1)
         exit(0);

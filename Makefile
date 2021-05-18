@@ -5,7 +5,6 @@ SRCS = srcs/push_swap.c \
 		srcs/exit.c \
 		srcs/validator.c \
 		srcs/utils.c \
-		srcs/sort.c \
 		srcs/operations.c \
 		srcs/alg_3_5.c \
 		srcs/alg_100.c
@@ -44,16 +43,18 @@ library:
 
 clean:		CLEAN
 			@$(RM) $(OBJS)
+			@$(RM) $(OBJS_C)
 			@$(MAKE) -C $(LIBFT_DIR) clean
 
 fclean:		clean FCLEAN LIBFCLEAN
 			@$(RM) $(NAME)
+			@$(RM) $(NAME_C)
 			@$(RM) $(LIBFT)
 
 re:			fclean all
 
 leaks:
-			valgrind --leak-check=full --show-leak-kinds=all ./$(NAME)
+			valgrind --leak-check=full --show-leak-kinds=all ./$(NAME) 1 2 0 4 3
 
 git:
 			make fclean
@@ -61,17 +62,28 @@ git:
 			git commit -m "commit"
 			git push
 
+space:
+			rm -rf ~/Library/Application\ Support/Code/Cache/*
+			rm -rf ~/Library/Application\ Support/Code/CachedData/*
+			rm -rf ~/Library/Application Support/Spotify/PersistentCache
+			rm -rf ~/Library/Application\ Support/Code/User/workspaceStoragerm -rf ~/Library/Caches/*
+			rm -rf ~/Library/42_cache
+			rm -rf ~/Library/Application\ Support/Slack/Service\ Worker/CacheStorage/
+			rm -rf ~/Library/Application\ Support/Slack/Cache/
+			rm -rf ~/Library/Application\ Support/Slack/Code\ Cache/
+			rm -rf ~/Library/Caches/
+
 .PHONY:		all clean fclean re
 .SILENT:
 
 COMP:
-	echo "\n$(CYAN)COMPILING $(NAME)$(DEFAULT)"
+	echo "\n$(CYAN)COMPILING $(NAME) $(NAME_C)$(DEFAULT)"
 DONE:
-	echo "\n$(CYAN)COMPILED $(NAME)$(DEFAULT)"
+	echo "\n$(CYAN)COMPILED $(NAME) $(NAME_C)$(DEFAULT)"
 CLEAN:
-	echo "\n$(YELLOW)REMOVING $(NAME) OBJECT FILES $(DEFAULT)"
+	echo "\n$(YELLOW)REMOVING $(NAME) $(NAME_C) OBJECT FILES $(DEFAULT)"
 FCLEAN:
-	echo "$(RED)REMOVING $(NAME) EXECUTABLE$(DEFAULT)"
+	echo "$(RED)REMOVING $(NAME) $(NAME_C) EXECUTABLE$(DEFAULT)"
 LIBFCLEAN:
 	echo "$(RED)REMOVING libft.a LIBRARY $(DEFAULT)"
 

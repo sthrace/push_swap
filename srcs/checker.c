@@ -34,7 +34,7 @@ static void	ft_validate_args(t_array *data, int argc, char **argv)
 	if (data == NULL)
         ft_exit();
 	if (argc == 1)
-        ft_exit();
+        exit(0);
 	if (argc == 2)
 		data->argv = ft_split(argv[1], 32);
 	if (argc > 2)
