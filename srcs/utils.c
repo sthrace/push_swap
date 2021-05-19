@@ -23,18 +23,48 @@ int	ft_issorted(int *stack, int size, int type)
 	return (1);
 }
 
-int	ft_position(int *stack, int size, int value)
+int	ft_find_mid(int *stack, int size)
+{
+	int			i;
+	int			j;
+	int			*tmp;
+	int			temp;
+
+	i = -1;
+	tmp = (int *)malloc(sizeof(int) * size);
+	while (++i < size)
+	{
+		tmp[i] = stack[i];
+		printf("temp[%d]: %d\n", i, tmp[i]);
+	}
+	j = -1;
+	while (++j < size - 1)
+	{
+		i = -1;
+		while (++i < size - j - 1)
+		{
+			if (tmp[i] > tmp[i + 1])
+			{
+				temp = tmp[i];
+				tmp[i] = tmp[i + 1];
+				tmp[i + 1] = temp;
+			}
+		}
+	}
+	return(tmp[size / 2]);
+	tmp = NULL;
+	free(tmp);	
+}
+
+int	ft_index(int *stack, int size, int value)
 {
 	int	i;
 
-	i = 0;
-	while (i < size)
-	{
+	i = -1;
+	while (++i < size)
 		if (stack[i] == value)
-			break;
-		i++;
-	}
-	return (i);
+			return(i);
+	return (-1);
 }
 
 int	ft_minmax(int *stack, int size, int type, int i)
@@ -86,7 +116,7 @@ void	ft_sort_array(t_array *data, int *stack, int size)
 		j++;
 	}
 	if (data->size % 2)
-		data->median = stack[size / 2 + 1];
+		data->mid_s = stack[size / 2 + 1];
 	else
-		data->median = stack[size / 2];
+		data->mid_s = stack[size / 2];
 }

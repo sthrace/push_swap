@@ -16,8 +16,9 @@ typedef struct s_array
     int     size_a;
     int     size_b;
 	int		size_s;
-	int		median;
-	int		step;
+	int		mid_a;
+	int		mid_b;
+	int		mid_s;
 }              t_array;
 
 // exit.c //
@@ -32,8 +33,9 @@ void	validate_input(t_array *data);
 
 void	ft_sort_array(t_array *data, int *stack, int size);
 int		ft_minmax(int *stack, int size, int type, int i);
-int		ft_position(int *stack, int size, int value);
 int		ft_issorted(int *stack, int size, int type);
+int		ft_find_mid(int *stack, int size);
+int		ft_index(int *stack, int size, int value);
 
 // sort.c //
 

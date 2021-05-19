@@ -6,7 +6,7 @@ static void	ft_chose_alg(t_array *data)
 		ft_sort_3(data);
 	else if (data->size < 6)
 		ft_sort_5(data);
-	else if (data->size < 501)
+	else
 		ft_sort_100(data);
 }
 
@@ -40,7 +40,6 @@ static void	init_array(t_array *data)
     data->size_a = data->size;
     data->size_b = 0;
 	data->size_s = data->size;
-	data->step = 3;
 }
 
 static void	ft_validate_args(t_array *data, int argc, char **argv)
