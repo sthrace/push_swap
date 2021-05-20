@@ -18,7 +18,7 @@ static void	populate_stacks(t_array *data, int argc)
 
 static void	init_array(t_array *data)
 {
-	data->stack = (int *)ft_calloc(data->size, sizeof(int));
+	data->stack = (long *)ft_calloc(data->size, sizeof(long));
 	data->stack_a = (int *)ft_calloc(data->size, sizeof(int));
     data->stack_b = (int *)ft_calloc(data->size, sizeof(int));
 	if (data->stack == NULL || data->stack_a == NULL || data->stack_b == NULL)

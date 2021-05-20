@@ -19,27 +19,23 @@ static void	populate_stacks(t_array *data, int argc)
 	while (++i < data->size)
 	{
 		data->stack_a[i] = ft_atoi(data->argv[i]);
-		data->stack_s[i] = ft_atoi(data->argv[i]);
 		if (argc == 2)
 			free(data->argv[i]);
 		data->stack_b[i] = 0;
 	}
 	if (argc == 2)
 		free(data->argv);
-	ft_sort_array(data, data->stack_s, data->size_s);
 }
 
 static void	init_array(t_array *data)
 {
-	data->stack = (long *)malloc(sizeof(long) * data->size);
+	data->stack = (int *)malloc(sizeof(int) * data->size);
 	data->stack_a = (int *)ft_calloc(data->size, sizeof(int));
     data->stack_b = (int *)ft_calloc(data->size, sizeof(int));
-	data->stack_s = (int *)ft_calloc(data->size, sizeof(int));
 	if (data->stack == NULL || data->stack_a == NULL || data->stack_b == NULL)
 		ft_exit();
     data->size_a = data->size;
     data->size_b = 0;
-	data->size_s = data->size;
 }
 
 static void	ft_validate_args(t_array *data, int argc, char **argv)

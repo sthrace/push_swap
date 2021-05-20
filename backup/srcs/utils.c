@@ -23,30 +23,37 @@ int	ft_issorted(int *stack, int size, int type)
 	return (1);
 }
 
-int	ft_get_chunk(int *stack, int size, int i, int j)
+int	ft_find_mid(int *stack, int size, int type)
 {
-	int			*arr_temp;
+	int			i;
+	int			j;
+	int			*tmp;
 	int			temp;
 
-	arr_temp = (int *)malloc(sizeof(int) * size);
+	i = -1;
+	tmp = (int *)malloc(sizeof(int) * size);
 	while (++i < size)
-		arr_temp[i] = stack[i];
+		tmp[i] = stack[i];
+	j = -1;
 	while (++j < size - 1)
 	{
 		i = -1;
 		while (++i < size - j - 1)
 		{
-			if (arr_temp[i] > arr_temp[i + 1])
+			if (tmp[i] > tmp[i + 1])
 			{
-				temp = arr_temp[i];
-				arr_temp[i] = arr_temp[i + 1];
-				arr_temp[i + 1] = temp;
+				temp = tmp[i];
+				tmp[i] = tmp[i + 1];
+				tmp[i + 1] = temp;
 			}
 		}
 	}
-	i = (arr_temp[4]);
-	arr_temp = NULL;
-	free(arr_temp);
+	if (type == 1)
+		i = (tmp[4]);
+	if (type == 2)
+		i = 4;
+	tmp = NULL;
+	free(tmp);
 	return (i);
 }
 
@@ -67,8 +74,8 @@ int	ft_minmax(int *stack, int size, int type, int i)
 	int	max;
 	int	index;
 
-	max = INT_MIN;
-	min = INT_MAX;
+	max = -2147483648;
+	min = 2147483647;
 	if (type == 10 || type == 11)
 	{
 		if (size > 0)
@@ -83,7 +90,7 @@ int	ft_minmax(int *stack, int size, int type, int i)
 		if (type == 11)
 			return (index);
 	}
-	if (type == 20 || type == 21)
+	if (type == 12 || type == 13)
 	{
 		if (size > 0)
 			while (++i < size)
@@ -100,7 +107,7 @@ int	ft_minmax(int *stack, int size, int type, int i)
 	return (0);
 }
 
-void	ft_sort_array(int *stack, int size)
+void	ft_sort_array(t_array *data, int *stack, int size)
 {
 	int			i;
 	int			j;
@@ -122,4 +129,8 @@ void	ft_sort_array(int *stack, int size)
 		}
 		j++;
 	}
+	if (data->size % 2)
+		data->mid_s = stack[size / 2 + 1];
+	else
+		data->mid_s = stack[size / 2];
 }

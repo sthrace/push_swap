@@ -9,13 +9,16 @@ typedef struct s_array
 {
 	int 	size;
 	char	**argv;
-    int		*stack;
+    long	*stack;
     int     *stack_a;
     int     *stack_b;
+	int		*stack_s;
     int     size_a;
     int     size_b;
-	int		low;
-	int		high;
+	int		size_s;
+	int		mid_a;
+	int		mid_b;
+	int		mid_s;
 }              t_array;
 
 // exit.c //
@@ -28,10 +31,10 @@ void	validate_input(t_array *data);
 
 // utils.c //
 
-void	ft_sort_array(int *stack, int size);
+void	ft_sort_array(t_array *data, int *stack, int size);
 int		ft_minmax(int *stack, int size, int type, int i);
 int		ft_issorted(int *stack, int size, int type);
-int	ft_get_chunk(int *stack, int size, int i, int j);
+int		ft_find_mid(int *stack, int size, int type);
 int		ft_index(int *stack, int size, int value);
 
 // sort.c //

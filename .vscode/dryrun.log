@@ -1,7 +1,6 @@
 make --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/sthrace/42Cursus/push_swap'
 /Applications/Xcode.app/Contents/Developer/usr/bin/make -C libft/
- 
 make[1]: Entering directory `/Users/sthrace/42Cursus/push_swap/libft'
 echo "\n\033[1;37mCOMPILING libft.a\033[0m"
 clang -c -g3 -Wall -Wextra -Werror -o ft_atoi.o ft_atoi.c
@@ -20,7 +19,6 @@ clang -c -g3 -Wall -Wextra -Werror -o ft_isascii.o ft_isascii.c
 printf "\033[1;37m██"
 clang -c -g3 -Wall -Wextra -Werror -o ft_isdigit.o ft_isdigit.c
 printf "\033[1;37m██"
- 
 clang -c -g3 -Wall -Wextra -Werror -o ft_isprint.o ft_isprint.c
 printf "\033[1;37m██"
 clang -c -g3 -Wall -Wextra -Werror -o ft_memchr.o ft_memchr.c
@@ -55,7 +53,6 @@ clang -c -g3 -Wall -Wextra -Werror -o ft_tolower.o ft_tolower.c
 printf "\033[1;37m██"
 clang -c -g3 -Wall -Wextra -Werror -o ft_toupper.o ft_toupper.c
 printf "\033[1;37m██"
- 
 clang -c -g3 -Wall -Wextra -Werror -o ft_substr.o ft_substr.c
 printf "\033[1;37m██"
 clang -c -g3 -Wall -Wextra -Werror -o ft_strjoin.o ft_strjoin.c
@@ -78,7 +75,6 @@ clang -c -g3 -Wall -Wextra -Werror -o ft_putnbr_fd.o ft_putnbr_fd.c
 printf "\033[1;37m██"
 clang -c -g3 -Wall -Wextra -Werror -o ft_charjoin.o ft_charjoin.c
 printf "\033[1;37m██"
- 
 clang -c -g3 -Wall -Wextra -Werror -o ft_gnl.o ft_gnl.c
 printf "\033[1;37m██"
 clang -c -g3 -Wall -Wextra -Werror -o ft_itoa_base.o ft_itoa_base.c
@@ -103,7 +99,6 @@ clang -c -g3 -Wall -Wextra -Werror -o ft_lstadd_back.o ft_lstadd_back.c
 printf "\033[1;37m██"
 clang -c -g3 -Wall -Wextra -Werror -o ft_lstdelone.o ft_lstdelone.c
 printf "\033[1;37m██"
- 
 clang -c -g3 -Wall -Wextra -Werror -o ft_lstclear.o ft_lstclear.c
 printf "\033[1;37m██"
 clang -c -g3 -Wall -Wextra -Werror -o ft_lstiter.o ft_lstiter.c
@@ -120,7 +115,6 @@ clang -c -g3 -Wall -Werror -Wextra -o srcs/exit.o srcs/exit.c
 printf "\033[1;36m██"		
 clang -c -g3 -Wall -Werror -Wextra -o srcs/validator.o srcs/validator.c
 printf "\033[1;36m██"		
- 
 clang -c -g3 -Wall -Werror -Wextra -o srcs/utils.o srcs/utils.c
 printf "\033[1;36m██"		
 clang -c -g3 -Wall -Werror -Wextra -o srcs/operations.o srcs/operations.c
