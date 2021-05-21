@@ -6,8 +6,10 @@ static void	ft_chose_alg(t_array *data)
 		ft_sort_3(data);
 	else if (data->size < 6)
 		ft_sort_5(data);
-	else
+	else if (data->size < 101)
 		ft_sort_100(data);
+	else
+		ft_sort_500(data);
 }
 
 
@@ -30,8 +32,8 @@ static void	populate_stacks(t_array *data, int argc)
 static void	init_array(t_array *data)
 {
 	data->stack = (int *)malloc(sizeof(int) * data->size);
-	data->stack_a = (int *)ft_calloc(data->size, sizeof(int));
-    data->stack_b = (int *)ft_calloc(data->size, sizeof(int));
+	data->stack_a = (int *)malloc(sizeof(int) * data->size);
+    data->stack_b = (int *)malloc(sizeof(int) * data->size);
 	if (data->stack == NULL || data->stack_a == NULL || data->stack_b == NULL)
 		ft_exit();
     data->size_a = data->size;
@@ -66,5 +68,9 @@ int     main(int argc, char **argv)
 	validate_input(data);
 	populate_stacks(data, argc);
 	ft_chose_alg(data);
+	free(data->stack);
+	free(data->stack_a);
+	free(data->stack_b);
+	free(data);
     return (0);
 }

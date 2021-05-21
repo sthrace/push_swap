@@ -14,8 +14,6 @@ typedef struct s_array
     int     *stack_b;
     int     size_a;
     int     size_b;
-	int		low;
-	int		high;
 }              t_array;
 
 // exit.c //
@@ -31,7 +29,8 @@ void	validate_input(t_array *data);
 void	ft_sort_array(int *stack, int size);
 int		ft_minmax(int *stack, int size, int type, int i);
 int		ft_issorted(int *stack, int size, int type);
-int	ft_get_chunk(int *stack, int size, int i, int j);
+int	ft_get_chunk_100(int *stack, int size, int i, int j);
+int	ft_get_chunk_500(int *stack, int size, int i, int j);
 int		ft_index(int *stack, int size, int value);
 
 // sort.c //
@@ -53,6 +52,10 @@ void	ft_sort_3(t_array *data);
 // alg_100.c //
 
 void	ft_sort_100(t_array *data);
+
+// alg_500.c //
+
+void	ft_sort_500(t_array *data);
 
 // checker_utils.c
 

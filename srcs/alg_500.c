@@ -29,12 +29,12 @@ static void	ft_b_to_a(t_array *data)
 		i = 0;
 		j = 0;
 		max = ft_minmax(data->stack_b, data->size_b, 20, -1);
-		t = ft_get_chunk_100(data->stack_b, data->size_b, -1, -1);
+		t = ft_get_chunk_500(data->stack_b, data->size_b, -1, -1);
 		while (data->stack_b[i] < max)
 			i++;
 		while (data->stack_b[data->size_b - j - 1] < max)
 			j++;
-		if (j >= i)
+		if (i < j + 1)
 		{
 			while (i > 0)
 			{
@@ -75,7 +75,7 @@ static void	ft_a_to_b(t_array *data)
 		ft_revrotate(data, 'b', 1);
 }
 
-void	ft_sort_100(t_array *data)
+void	ft_sort_500(t_array *data)
 {
 	int	i;
 	int	j;
@@ -83,10 +83,10 @@ void	ft_sort_100(t_array *data)
 	int	t;
 
 	k = 0;
-	t = ft_get_chunk_100(data->stack_a, data->size_a, -1, -1);
+	t = ft_get_chunk_500(data->stack_a, data->size_a, -1, -1);
 	if (!ft_issorted(data->stack_a, data->size_a, 1))
 	{
-		while (k < 20)
+		while (k < 50)
 		{
 			i = 0;
 			j = 0;
@@ -94,7 +94,7 @@ void	ft_sort_100(t_array *data)
 				i++;
 			while (data->stack_a[data->size_a - j - 1] > t)
 				j++;
-			if (j >= i)
+			if (i < j + 1)
 			{
 				while (i > 0)
 				{
@@ -133,7 +133,7 @@ void	ft_sort_100(t_array *data)
 					ft_a_to_b(data);
 				k += 1;
 			}
-			else if (i == j + 1)
+			else
 			{
 				if (data->stack_a[i] < data->stack_a[j])
 				{
@@ -180,8 +180,5 @@ void	ft_sort_100(t_array *data)
 		// while (++i < data->size_b)
 		// 	printf("B[%d]: %d\n", i, data->stack_b[i]);
 		ft_b_to_a(data);
-		// i = -1;
-		// while (++i < data->size_a)
-		// 	printf("A[%d]: %d\n", i, data->stack_a[i]);
 	}
 }

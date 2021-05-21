@@ -18,7 +18,7 @@ static void	populate_stacks(t_array *data, int argc)
 
 static void	init_array(t_array *data)
 {
-	data->stack = (int *)ft_calloc(data->size, sizeof(int));
+	data->stack = (int *)malloc(sizeof(int) * data->size);
 	data->stack_a = (int *)ft_calloc(data->size, sizeof(int));
     data->stack_b = (int *)ft_calloc(data->size, sizeof(int));
 	if (data->stack == NULL || data->stack_a == NULL || data->stack_b == NULL)
@@ -32,7 +32,7 @@ static void	ft_validate_args(t_array *data, int argc, char **argv)
 	int	i;
 
 	if (data == NULL)
-        ft_exit();
+        exit(0);
 	if (argc == 1)
         exit(0);
 	if (argc == 2)
@@ -72,5 +72,9 @@ int	main(int argc, char **argv)
 	}
 	free(cmd);
 	ft_output(data);
+	free(data->stack);
+	free(data->stack_a);
+	free(data->stack_b);
+	free(data);
     return (0);
 }

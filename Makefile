@@ -7,7 +7,8 @@ SRCS = srcs/push_swap.c \
 		srcs/utils.c \
 		srcs/operations.c \
 		srcs/alg_3_5.c \
-		srcs/alg_100.c
+		srcs/alg_100.c \
+		srcs/alg_500.c
 
 SRCS_C = srcs/checker.c \
 		srcs/validator.c \
@@ -54,7 +55,7 @@ fclean:		clean FCLEAN LIBFCLEAN
 re:			fclean all
 
 leaks:
-			valgrind --leak-check=full --show-leak-kinds=all ./$(NAME) 1 2 0 4 3
+			valgrind --leak-check=full --show-leak-kinds=all ./$(NAME) 1 0 3 7 4 2 8
 
 git:
 			make fclean
