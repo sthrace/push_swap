@@ -6,9 +6,9 @@ void	ft_sort_5(t_array *data)
 	{
 		while (data->size_a > 3)
 		{
-			while (data->stack_a[0] != ft_minmax(data->stack_a, data->size_a, 10, -1))
+			while (data->stack_a[0] != ft_minmax(data->stack_a, data->size_a, 1, -1))
 			{
-				if (ft_index(data->stack_a, data->size_a, (ft_minmax(data->stack_a, data->size_a, 10, -1))) <= data->size_a / 2)
+				if (ft_index(data->stack_a, data->size_a, (ft_minmax(data->stack_a, data->size_a, 1, -1))) <= data->size_a / 2)
 					ft_rotate(data, 'a', 1);
 				else
 					ft_revrotate(data, 'a', 1);
@@ -25,12 +25,12 @@ void	ft_sort_3(t_array *data)
 {
 	while (!ft_issorted(data->stack_a, data->size_a, 1))
 	{
-		if (ft_index(data->stack_a, data->size_a, (ft_minmax(data->stack_a, data->size_a, 10, -1))) == 0)
+		if (ft_index(data->stack_a, data->size_a, (ft_minmax(data->stack_a, data->size_a, 1, -1))) == 0)
 		{
 			ft_swap(data, 'a', 1);
 			ft_rotate(data, 'a', 1);
 		}
-		else if (ft_index(data->stack_a, data->size_a, (ft_minmax(data->stack_a, data->size_a, 10, -1))) == 1)
+		else if (ft_index(data->stack_a, data->size_a, (ft_minmax(data->stack_a, data->size_a, 1, -1))) == 1)
 		{
 			if (data->stack_a[0] < data->stack_a[2])
 				ft_swap(data, 'a', 1);

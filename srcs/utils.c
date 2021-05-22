@@ -44,10 +44,10 @@ int	ft_get_chunk_500(int *stack, int size, int i, int j)
 			}
 		}
 	}
-	if (arr_temp[49])
-		i = (arr_temp[49]);
+	if (arr_temp[199])
+		i = (arr_temp[199]);
 	else
-		i = (arr_temp[sizeof(arr_temp)]);
+		i = (arr_temp[sizeof(arr_temp) - 1]);
 	free(arr_temp);
 	arr_temp = NULL;
 	return (i);
@@ -83,6 +83,34 @@ int	ft_get_chunk_100(int *stack, int size, int i, int j)
 	return (i);
 }
 
+int	ft_get_value(int *stack, int size, int value, int j)
+{
+	int			*arr_temp;
+	int			temp;
+	int			i;
+
+	arr_temp = (int *)malloc(sizeof(int) * size);
+	i = -1;
+	while (++i < size)
+		arr_temp[i] = stack[i];
+	while (++j < size - 1)
+	{
+		i = -1;
+		while (++i < size - j - 1)
+		{
+			if (arr_temp[i] > arr_temp[i + 1])
+			{
+				temp = arr_temp[i];
+				arr_temp[i] = arr_temp[i + 1];
+				arr_temp[i + 1] = temp;
+			}
+		}
+	}
+	value = arr_temp[value];
+	free(arr_temp);
+	return (value);
+}
+
 int	ft_index(int *stack, int size, int value)
 {
 	int	i;
@@ -98,9 +126,11 @@ int	ft_minmax(int *stack, int size, int type, int i)
 {
 	int	min;
 	int	max;
+	int	oldmax;
 
 	max = INT_MIN;
 	min = INT_MAX;
+	oldmax = max;
 	if (size > 0)
 	{
 		while (++i < size)
@@ -111,9 +141,9 @@ int	ft_minmax(int *stack, int size, int type, int i)
 				max = stack[i];
 		}
 	}
-	if (type == 10)
+	if (type == 1)
 		return (min);
-	if (type == 20)
+	if (type == 2)
 		return (max);
 	return (0);
 }

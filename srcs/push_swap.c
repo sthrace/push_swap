@@ -6,10 +6,10 @@ static void	ft_chose_alg(t_array *data)
 		ft_sort_3(data);
 	else if (data->size < 6)
 		ft_sort_5(data);
-	else if (data->size < 101)
+	else if (data->size < 501)
 		ft_sort_100(data);
-	else
-		ft_sort_500(data);
+	// else
+	// 	ft_sort_500(data);
 }
 
 
@@ -34,7 +34,8 @@ static void	init_array(t_array *data)
 	data->stack = (int *)malloc(sizeof(int) * data->size);
 	data->stack_a = (int *)malloc(sizeof(int) * data->size);
     data->stack_b = (int *)malloc(sizeof(int) * data->size);
-	if (data->stack == NULL || data->stack_a == NULL || data->stack_b == NULL)
+	data->moves = (int *)malloc(sizeof(int) * data->size);
+	if (data->stack == NULL || data->stack_a == NULL || data->stack_b == NULL || data->moves == NULL)
 		ft_exit();
     data->size_a = data->size;
     data->size_b = 0;
@@ -71,6 +72,7 @@ int     main(int argc, char **argv)
 	free(data->stack);
 	free(data->stack_a);
 	free(data->stack_b);
+	free(data->moves);
 	free(data);
     return (0);
 }

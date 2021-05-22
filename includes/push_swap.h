@@ -12,6 +12,7 @@ typedef struct s_array
     int		*stack;
     int     *stack_a;
     int     *stack_b;
+	int		*moves;
     int     size_a;
     int     size_b;
 }              t_array;
@@ -31,6 +32,7 @@ int		ft_minmax(int *stack, int size, int type, int i);
 int		ft_issorted(int *stack, int size, int type);
 int	ft_get_chunk_100(int *stack, int size, int i, int j);
 int	ft_get_chunk_500(int *stack, int size, int i, int j);
+int	ft_get_value(int *stack, int size, int value, int j);
 int		ft_index(int *stack, int size, int value);
 
 // sort.c //

@@ -1,5 +1,22 @@
 #include "../includes/push_swap.h"
 
+// void	ft_b_to_a(t_array *data)
+// {
+// 	while (data->size_b > 0)
+// 	{
+// 		if (data->stack_b[0] == ft_minmax(data->stack_b, data->size_b, 20, -1))
+// 			ft_push(data, 'a', 1);
+// 		else if (data->stack_b[data->size_b - 1] == ft_minmax(data->stack_b, data->size_b, 20, -1))
+// 			ft_revrotate(data, 'b', 1);
+// 		else if (data->stack_b[1] == ft_minmax(data->stack_b, data->size_b, 20, -1))
+// 			ft_swap(data, 'b', 1);
+// 		else if (ft_index(data->stack_b, data->size_b, ft_minmax(data->stack_b, data->size_b, 20, -1)) < data->size_b / 2 && ft_index(data->stack_b, data->size_b, ft_minmax(data->stack_b, data->size_b, 20, -1)) > 1)
+// 			ft_rotate(data, 'b', 1);
+// 		else
+// 			ft_revrotate(data, 'b', 1);
+// 	}
+// }
+
 static void	ft_b_to_a(t_array *data)
 {
 	int	i;
@@ -12,10 +29,7 @@ static void	ft_b_to_a(t_array *data)
 		i = 0;
 		j = 0;
 		max = ft_minmax(data->stack_b, data->size_b, 2, -1);
-		// if (data->size_b > 100)
-			t = ft_get_chunk_500(data->stack_b, data->size_b, -1, -1);
-		// else
-			// t = ft_get_chunk_100(data->stack_b, data->size_b, -1, -1);
+		t = ft_get_chunk_100(data->stack_b, data->size_b, -1, -1);
 		while (data->stack_b[i] < max)
 			i++;
 		while (data->stack_b[data->size_b - j - 1] < max)
@@ -63,28 +77,18 @@ static void	ft_a_to_b(t_array *data)
 	ft_push(data, 'b', 1);
 }
 
-void	ft_sort_500(t_array *data)
+void	ft_sort_100(t_array *data)
 {
 	int	i;
 	int	j;
 	int	k;
 	int	t;
-	int	size;
 
 	k = 0;
-	if (data->size_a > 100)
-	{
-		t = ft_get_chunk_500(data->stack_a, data->size_a, -1, -1);
-		size = 200;
-	}
-	else
-	{
-		t = ft_get_chunk_100(data->stack_a, data->size_a, -1, -1);
-		size = 19;
-	}
+	t = ft_get_chunk_100(data->stack_a, data->size_a, -1, -1);
 	if (!ft_issorted(data->stack_a, data->size_a, 1))
 	{
-		while (k < size)
+		while (k < 20)
 		{
 			i = 0;
 			j = 0;
@@ -162,7 +166,7 @@ void	ft_sort_500(t_array *data)
 		}
 	}
 	if (data->size_a > 0 && !ft_issorted(data->stack_a, data->size_a, 1))
-		ft_sort_500(data);
+		ft_sort_100(data);
 	else
 	{
 		// i = -1;
