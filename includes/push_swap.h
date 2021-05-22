@@ -15,6 +15,7 @@ typedef struct s_array
 	int		*moves;
     int     size_a;
     int     size_b;
+    int     set;
 }              t_array;
 
 // exit.c //

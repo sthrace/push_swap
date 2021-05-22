@@ -39,6 +39,7 @@ static void	init_array(t_array *data)
 		ft_exit();
     data->size_a = data->size;
     data->size_b = 0;
+	data->set = 0;
 }
 
 static void	ft_validate_args(t_array *data, int argc, char **argv)
