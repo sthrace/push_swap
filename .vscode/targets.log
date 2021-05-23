@@ -16,7 +16,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Sat May 22 10:19:24 2021
+# Make data base, printed on Sun May 23 18:21:02 2021
 
 # Variables
 
@@ -26,6 +26,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 ?F = $(notdir $?)
 # environment
 VSCODE_LOG_NATIVE = false
+ 
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
@@ -44,7 +45,6 @@ VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupp
 _ = /usr/bin/make
 # makefile (from `Makefile', line 59)
 CFLAGS = -g3 -Wall -Wextra -Werror
- 
 # makefile (from `Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
 # makefile (from `Makefile', line 3)
@@ -56,11 +56,11 @@ VSCODE_VERBOSE_LOGGING = true
 # makefile (from `Makefile', line 55)
 OBJS = $(SRCS:.c=.o)
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n0001ry8000f7k/T/vscode-ipc-bf827401-2361-41aa-9b14-b51f3e7343e8.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n0001ry8000f7k/T/vscode-ipc-f21edf44-1449-42db-9d3c-0af998dd6c29.sock
 # environment
 VSCODE_CWD = /
 # environment
-Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.BS3kionlcD/Render
+Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.zLBE82iTA4/Render
 # environment
 PATH = /Users/sthrace/.brew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
 # environment
@@ -70,7 +70,7 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.AFQq3Mzk9i/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.vUHebW1zex/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -138,7 +138,7 @@ MFLAGS = -sRrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000019.Electron
+XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x1000001f.Electron
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # makefile (from `Makefile', line 92)
@@ -160,7 +160,7 @@ LC_ALL = C
 # makefile (from `Makefile', line 56)
 HEADER = libft.h
 # environment
-SECURITYSESSIONID = 1879b
+SECURITYSESSIONID = 187c4
 # automatic
 ^F = $(notdir $^)
 # default
@@ -172,7 +172,7 @@ MAKELEVEL := 1
 # environment
 LANG = C
 # environment
-VSCODE_PID = 98331
+VSCODE_PID = 69277
 # variable set hash-table stats:
 # Load=76/1024=7%, Rehash=0, Collisions=8/111=7%
 
@@ -182,9 +182,9 @@ VSCODE_PID = 98331
 
 # Directories
 
-# . (device 16777227, inode 4951408): 57 files, no impossibilities.
+# . (device 16777227, inode 4951408): 108 files, no impossibilities.
 
-# 57 files, no impossibilities in 1 directories.
+# 108 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -324,6 +324,7 @@ ft_strrchr.o:
 ft_strjoin.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
+ 
 #  File has not been updated.
 
 # Not a target:
@@ -352,7 +353,6 @@ git:
 #  commands to execute (from `Makefile', line 80):
 	make fclean
 	@git add *
- 
 	@git commit -m "commit"
 	@git push
 	
@@ -386,7 +386,7 @@ ft_isprint.o:
 
 libft.a: COMP ft_atoi.o ft_atol.o ft_bzero.o ft_calloc.o ft_isalnum.o ft_isalpha.o ft_isascii.o ft_isdigit.o ft_isprint.o ft_memchr.o ft_memcmp.o ft_memcpy.o ft_memccpy.o ft_memmove.o ft_memset.o ft_strchr.o ft_strdup.o ft_strlcat.o ft_strlcpy.o ft_strlen.o ft_strncmp.o ft_strnstr.o ft_strrchr.o ft_tolower.o ft_toupper.o ft_substr.o ft_strjoin.o ft_strtrim.o ft_split.o ft_itoa.o ft_strmapi.o ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_charjoin.o ft_gnl.o ft_itoa_base.o ft_nbrlen_base.o ft_putnbr_base_fd.o ft_realloc.o ft_strncmpul.o ft_lstnew.o ft_lstadd_front.o ft_lstsize.o ft_lstlast.o ft_lstadd_back.o ft_lstdelone.o ft_lstclear.o ft_lstiter.o ft_lstmap.o DONE
 #  Implicit rule search has not been done.
-#  File does not exist.
+#  Last modified 2021-05-23 18:20:40
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
@@ -636,6 +636,7 @@ ft_strtrim.o:
 ft_nbrlen_base.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
+ 
 #  File has not been updated.
 
 # Not a target:
@@ -666,14 +667,13 @@ ft_putendl_fd.o:
 
 # # of strings in strcache: 1
 # # of strcache buffers: 1
- 
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Sat May 22 10:19:24 2021
+# Finished Make data base on Sun May 23 18:21:02 2021
 
 
-# Make data base, printed on Sat May 22 10:19:24 2021
+# Make data base, printed on Sun May 23 18:21:02 2021
 
 # Variables
 
@@ -704,7 +704,7 @@ CFLAGS = -g3 -Wall -Werror -Wextra
 # makefile (from `Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
 # makefile (from `Makefile', line 4)
-SRCS = srcs/push_swap.c srcs/exit.c srcs/validator.c srcs/utils.c srcs/operations.c srcs/alg_3_5.c srcs/alg_100.c srcs/alg_500.c
+SRCS = srcs/push_swap.c srcs/utils.c srcs/validator.c srcs/calc.c srcs/operations.c srcs/alg_3_5.c srcs/alg_100.c 
 # environment
 VSCODE_NODE_CACHED_DATA_DIR = /Users/sthrace/Library/Application Support/Code/CachedData/054a9295330880ed74ceaedda236253b4f39a335
 # environment
@@ -712,15 +712,15 @@ VSCODE_VERBOSE_LOGGING = true
 # makefile (from `Makefile', line 20)
 OBJS = $(SRCS:.c=.o)
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n0001ry8000f7k/T/vscode-ipc-bf827401-2361-41aa-9b14-b51f3e7343e8.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n0001ry8000f7k/T/vscode-ipc-f21edf44-1449-42db-9d3c-0af998dd6c29.sock
 # environment
 VSCODE_CWD = /
 # environment
-Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.BS3kionlcD/Render
+Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.zLBE82iTA4/Render
 # environment
 PATH = /Users/sthrace/.brew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
 # makefile (from `Makefile', line 13)
-SRCS_C = srcs/checker.c srcs/validator.c srcs/exit.c srcs/utils.c srcs/operations.c srcs/checker_utils.c
+SRCS_C = srcs/checker.c srcs/utils.c srcs/validator.c srcs/calc.c srcs/operations.c 
 # environment
 VSCODE_LOG_STACK = false
 # environment
@@ -732,7 +732,7 @@ LIBFT_DIR = libft/
 # makefile (from `Makefile', line 2)
 NAME_C = checker
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.AFQq3Mzk9i/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.vUHebW1zex/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -806,7 +806,7 @@ MFLAGS = -sRrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000019.Electron
+XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x1000001f.Electron
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # makefile (from `Makefile', line 94)
@@ -828,7 +828,7 @@ LC_ALL = C
 # makefile (from `Makefile', line 97)
 DEFAULT = \033[0m
 # environment
-SECURITYSESSIONID = 1879b
+SECURITYSESSIONID = 187c4
 # automatic
 ^F = $(notdir $^)
 # default
@@ -840,7 +840,7 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 98331
+VSCODE_PID = 69277
 # variable set hash-table stats:
 # Load=82/1024=8%, Rehash=0, Collisions=6/119=5%
 
@@ -850,9 +850,9 @@ VSCODE_PID = 98331
 
 # Directories
 
-# . (device 16777227, inode 4950980): 17 files, no impossibilities.
+# . (device 16777227, inode 4950980): 20 files, no impossibilities.
 
-# 17 files, no impossibilities in 1 directories.
+# 20 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -934,7 +934,7 @@ git:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2021-05-21 18:15:26
+#  Last modified 2021-05-23 18:20:39
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -950,6 +950,9 @@ space:
 	rm -rf ~/Library/Application Support/Spotify/PersistentCache
 	rm -rf ~/Library/Application\ Support/Code/User/workspaceStoragerm -rf ~/Library/Caches/*
 	rm -rf ~/Library/42_cache
+ 
+make: *** [library] Error 1
+ 
 	rm -rf ~/Library/Application\ Support/Slack/Service\ Worker/CacheStorage/
 	rm -rf ~/Library/Application\ Support/Slack/Cache/
 	rm -rf ~/Library/Application\ Support/Slack/Code\ Cache/
@@ -975,9 +978,6 @@ fclean: clean FCLEAN LIBFCLEAN
 
 DONE:
 #  Implicit rule search has not been done.
- 
-make: *** [library] Error 1
- 
 #  Modification time never checked.
 #  File has not been updated.
 #  commands to execute (from `Makefile', line 83):
@@ -1017,7 +1017,7 @@ leaks:
 #  Modification time never checked.
 #  File has not been updated.
 #  commands to execute (from `Makefile', line 58):
-	valgrind --leak-check=full --show-leak-kinds=all ./$(NAME) 1 0 3 7 4 2 8
+	valgrind --leak-check=full --show-leak-kinds=all ./$(NAME) "1 2 3" 15 "25" 0 "10 -14"
 	
 
 # Not a target:
@@ -1039,12 +1039,6 @@ LIBFCLEAN:
 	echo "$(RED)REMOVING libft.a LIBRARY $(DEFAULT)"
 	
 
-# Not a target:
-srcs/exit.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
 CLEAN:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -1059,7 +1053,13 @@ CLEAN:
 #  Modification time never checked.
 #  File has not been updated.
 
-checker: COMP srcs/checker.o srcs/validator.o srcs/exit.o srcs/utils.o srcs/operations.o srcs/checker_utils.o DONE
+# Not a target:
+srcs/calc.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+checker: COMP srcs/checker.o srcs/utils.o srcs/validator.o srcs/calc.o srcs/operations.o DONE
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -1084,21 +1084,15 @@ clean: CLEAN
 	@$(MAKE) -C $(LIBFT_DIR) clean
 	
 
-push_swap: library COMP srcs/push_swap.o srcs/exit.o srcs/validator.o srcs/utils.o srcs/operations.o srcs/alg_3_5.o srcs/alg_100.o srcs/alg_500.o checker DONE
+push_swap: library COMP srcs/push_swap.o srcs/utils.o srcs/validator.o srcs/calc.o srcs/operations.o srcs/alg_3_5.o srcs/alg_100.o checker DONE
 #  Implicit rule search has not been done.
-#  File does not exist.
+#  Last modified 2021-05-23 18:20:40
 #  File has not been updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/5=0%
 #  commands to execute (from `Makefile', line 33):
 	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFT)
 	
-
-# Not a target:
-srcs/checker_utils.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
 
 # Not a target:
 srcs/operations.o:
@@ -1112,14 +1106,8 @@ srcs/push_swap.o:
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-srcs/alg_500.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
 # files hash-table stats:
-# Load=30/1024=3%, Rehash=0, Collisions=0/76=0%
+# Load=28/1024=3%, Rehash=0, Collisions=0/72=0%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -1131,6 +1119,6 @@ srcs/alg_500.o:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Sat May 22 10:19:24 2021
+# Finished Make data base on Sun May 23 18:21:02 2021
 
  

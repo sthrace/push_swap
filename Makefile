@@ -2,20 +2,20 @@ NAME = push_swap
 NAME_C = checker
 
 SRCS = srcs/push_swap.c \
-		srcs/exit.c \
-		srcs/validator.c \
 		srcs/utils.c \
+		srcs/validator.c \
+		srcs/calc.c \
 		srcs/operations.c \
 		srcs/alg_3_5.c \
 		srcs/alg_100.c \
-		srcs/alg_500.c
+		# srcs/alg_500.c
 
 SRCS_C = srcs/checker.c \
-		srcs/validator.c \
-		srcs/exit.c \
 		srcs/utils.c \
+		srcs/validator.c \
+		srcs/calc.c \
 		srcs/operations.c \
-		srcs/checker_utils.c
+		# srcs/checker_utils.c
 
 OBJS = $(SRCS:.c=.o)
 OBJS_C = $(SRCS_C:.c=.o)
@@ -55,7 +55,7 @@ fclean:		clean FCLEAN LIBFCLEAN
 re:			fclean all
 
 leaks:
-			valgrind --leak-check=full --show-leak-kinds=all ./$(NAME) 1 0 3 7 4 2 8
+			valgrind --leak-check=full --show-leak-kinds=all ./$(NAME) "1 2 3" 15 "25" 0 "10 -14"
 
 git:
 			make fclean

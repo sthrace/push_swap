@@ -1,80 +1,73 @@
 #include "../includes/push_swap.h"
 
-static void	populate_stacks(t_array *data, int argc)
+static void	ft_output(t_array *data)
 {
-	int	i;
-
-	i = -1;
-	while (++i < data->size)
-	{
-		data->stack_a[i] = ft_atoi(data->argv[i]);
-		if (argc == 2)
-			free(data->argv[i]);
-		data->stack_b[i] = 0;
-	}
-	if (argc == 2)
-		free(data->argv);
+	if (ft_issorted(data->a, data->cnt_a, 1) && data->cnt_b == 0)
+		ft_putendl_fd("\033[1;32mOK\033[0m", 1);
+	else
+		ft_putendl_fd("\033[1;31mKO\033[0m", 2);
 }
 
-static void	init_array(t_array *data)
+static void	set_instructions(t_array *data, char *cmd)
 {
-	data->stack = (int *)malloc(sizeof(int) * data->size);
-	data->stack_a = (int *)ft_calloc(data->size, sizeof(int));
-    data->stack_b = (int *)ft_calloc(data->size, sizeof(int));
-	if (data->stack == NULL || data->stack_a == NULL || data->stack_b == NULL)
+	if (!strncmp(cmd, "sa", 2) && ft_strlen(cmd) == 3)
+		ft_swap(data, 'a', 0);
+	else if (!strncmp(cmd, "sb", 2) && ft_strlen(cmd) == 3)
+		ft_swap(data, 'b', 0);
+	else if (!strncmp(cmd, "ss", 2) && ft_strlen(cmd) == 3)
+		ft_swap(data, 's', 0);
+	else if (!strncmp(cmd, "pa", 2) && ft_strlen(cmd) == 3)
+		ft_push(data, 'a', 0);
+	else if (!strncmp(cmd, "pb", 2) && ft_strlen(cmd) == 3)
+		ft_push(data, 'b', 0);
+	else if (!strncmp(cmd, "ra", 2) && ft_strlen(cmd) == 3)
+		ft_rotate(data, 'a', 0);
+	else if (!strncmp(cmd, "rb", 2) && ft_strlen(cmd) == 3)
+		ft_rotate(data, 'b', 0);
+	else if (!strncmp(cmd, "rr", 2) && ft_strlen(cmd) == 3)
+		ft_rotate(data, 'r', 0);
+	else if (!strncmp(cmd, "rra", 3) && ft_strlen(cmd) == 4)
+		ft_revrotate(data, 'a', 0);
+	else if (!strncmp(cmd, "rrb", 3) && ft_strlen(cmd) == 4)
+		ft_revrotate(data, 'b', 0);
+	else if (!strncmp(cmd, "rrr", 3) && ft_strlen(cmd) == 4)
+		ft_revrotate(data, 'r', 0);
+	else
 		ft_exit();
-    data->size_a = data->size;
-    data->size_b = 0;
-}
-
-static void	ft_validate_args(t_array *data, int argc, char **argv)
-{
-	int	i;
-
-	if (data == NULL)
-        exit(0);
-	if (argc == 1)
-        exit(0);
-	if (argc == 2)
-		data->argv = ft_split(argv[1], 32);
-	if (argc > 2)
-		data->argv = argv + 1;
-	data->size = 0;
-	i = -1;
-	while (data->argv[++i] != NULL)
-		data->size++;
 }
 
 int	main(int argc, char **argv)
 {
-	t_array     *data;
+	t_array data;
 	char		*cmd;
 	char		buf[1];
 
-	data = (t_array *)malloc(sizeof(t_array));
-	ft_validate_args(data, argc, argv);
-    init_array(data);
-	validate_input(data);
-	populate_stacks(data, argc);
-	cmd = ft_strdup("");
-	while (read(0, &buf, 1) > 0)
+	ft_memset(&data, 0, sizeof(data));
+	ft_memset(&cmd, 0, 5);
+	if (argc == 1)
+		return(1);
+	else
 	{
-		if (buf[0] == 32)
-			ft_exit();
-		cmd = ft_charjoin(cmd, buf[0]);
-		if (buf[0] == '\n')
+		data.cnt_a = 0;
+		validate_array(argc, argv);
+		parse_argv(&data, argc, argv, 1);
+		check_dups(data);
+		cmd = ft_strdup("");
+		while (read(0, &buf, 1) > 0)
 		{
-			buf[0] = '\0';
-			set_instructions(data, cmd);
-			free(cmd);
-			cmd = ft_strdup("");
+			if (buf[0] == 32)
+				ft_exit();
+			cmd = ft_charjoin(cmd, buf[0]);
+			if (buf[0] == '\n')
+			{
+				buf[0] = '\0';
+				set_instructions(&data, cmd);
+				free(cmd);
+				cmd = ft_strdup("");
+			}
 		}
+		free(cmd);
+		ft_output(&data);
 	}
-	free(cmd);
-	ft_output(data);
-	free(data->stack);
-	free(data->stack_a);
-	free(data->stack_b);
-	free(data);
-    return (0);
+	return (0);
 }
