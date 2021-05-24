@@ -36,37 +36,43 @@ static void	set_instructions(t_array *data, char *cmd)
 		ft_exit();
 }
 
-int	main(int argc, char **argv)
+static void	get_cmds(t_array *data)
 {
-	t_array data;
 	char		*cmd;
 	char		buf[1];
 
-	ft_memset(&data, 0, sizeof(data));
 	ft_memset(&cmd, 0, 5);
+	cmd = ft_strdup("");
+	while (read(0, &buf, 1) > 0)
+	{
+		if (buf[0] == 32)
+			ft_exit();
+		cmd = ft_charjoin(cmd, buf[0]);
+		if (buf[0] == '\n')
+		{
+			buf[0] = '\0';
+			set_instructions(data, cmd);
+			free(cmd);
+			cmd = ft_strdup("");
+		}
+	}
+	free(cmd);
+}
+
+int	main(int argc, char **argv)
+{
+	t_array		data;
+
+	ft_memset(&data, 0, sizeof(data));
 	if (argc == 1)
-		return(1);
+		return (1);
 	else
 	{
 		data.cnt_a = 0;
 		validate_array(argc, argv);
 		parse_argv(&data, argc, argv, 1);
 		check_dups(data);
-		cmd = ft_strdup("");
-		while (read(0, &buf, 1) > 0)
-		{
-			if (buf[0] == 32)
-				ft_exit();
-			cmd = ft_charjoin(cmd, buf[0]);
-			if (buf[0] == '\n')
-			{
-				buf[0] = '\0';
-				set_instructions(&data, cmd);
-				free(cmd);
-				cmd = ft_strdup("");
-			}
-		}
-		free(cmd);
+		get_cmds(&data);
 		ft_output(&data);
 	}
 	return (0);

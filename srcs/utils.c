@@ -3,7 +3,7 @@
 void	ft_exit(void)
 {
 	ft_putendl_fd("\033[1;31mError\033[0m", 2);
-    exit (1);
+	exit (1);
 }
 
 void	ft_free_array(char **array)
@@ -29,7 +29,7 @@ void	parse_argv(t_array *data, int argc, char **argv, int i)
 		{
 			temp = ft_split(argv[i], 32);
 			k = -1;
-			while(temp[++k])
+			while (temp[++k])
 				data->a[++j] = ft_atol(temp[k]);
 			data->cnt_a += k;
 			ft_free_array(temp);

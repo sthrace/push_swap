@@ -8,14 +8,13 @@ SRCS = srcs/push_swap.c \
 		srcs/operations.c \
 		srcs/alg_3_5.c \
 		srcs/alg_100.c \
-		# srcs/alg_500.c
+		srcs/alg_100_utils.c
 
 SRCS_C = srcs/checker.c \
 		srcs/utils.c \
 		srcs/validator.c \
 		srcs/calc.c \
-		srcs/operations.c \
-		# srcs/checker_utils.c
+		srcs/operations.c
 
 OBJS = $(SRCS:.c=.o)
 OBJS_C = $(SRCS_C:.c=.o)

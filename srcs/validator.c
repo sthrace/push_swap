@@ -48,7 +48,7 @@ void	validate_array(int argc, char **argv)
 		{
 			temp = ft_split(argv[i], 32);
 			j = -1;
-			while(temp[++j])
+			while (temp[++j])
 				eliminate_sign(temp[j]);
 			ft_free_array(temp);
 		}

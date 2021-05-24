@@ -1,6 +1,6 @@
 #include "../includes/push_swap.h"
 
-int	ft_mid(int *stack, int size, int value)
+int	ft_value(int *stack, int size, int index)
 {
 	int			arr_temp[500];
 	int			temp;
@@ -25,7 +25,7 @@ int	ft_mid(int *stack, int size, int value)
 			}
 		}
 	}
-	return(arr_temp[value]);
+	return (arr_temp[index]);
 }
 
 int	ft_minmax(int *stack, int size, int type, int i)
@@ -33,8 +33,8 @@ int	ft_minmax(int *stack, int size, int type, int i)
 	int	min;
 	int	max;
 
-	max = INT_MIN;
-	min = INT_MAX;
+	max = stack[0];
+	min = stack[0];
 	if (size > 0)
 	{
 		while (++i < size)
@@ -59,7 +59,7 @@ int	ft_index(int *stack, int size, int value)
 	i = -1;
 	while (++i < size)
 		if (stack[i] == value)
-			return(i);
+			return (i);
 	return (-1);
 }
 

@@ -13,8 +13,7 @@ typedef struct s_array
     int     cnt_b;
 	int		mid_a;
 	int		mid_b;
-	int		sorted;
-	int		moved;
+	int		value;
 }              t_array;
 
 // utils.c //
@@ -34,7 +33,8 @@ void	sorter(int *arr, int size);
 int		ft_issorted(int *stack, int size, int type);
 int		ft_index(int *stack, int size, int value);
 int		ft_minmax(int *stack, int size, int type, int i);
-int		ft_mid(int *stack, int size, int value);
+int		ft_value(int *stack, int size, int index);
+int		ft_top_5(int *stack, int size);
 
 // operations.c //
 
@@ -47,10 +47,18 @@ void	ft_revrotate(t_array *data, int param, int type);
 
 void	sort_3(t_array *data);
 void	sort_5(t_array *data);
+void	revsort_3(t_array *data);
+void	revsort_5(t_array *data);
 
 // alg_100.c //
 
-void	sort_100(t_array *data);
-void	b_to_a(t_array *data);
+void	sort_100(t_array *data, int chunk);
+void	sort_500(t_array *data, int chunk);
+void	ft_b_to_a(t_array *data);
+
+// alg_100_utils.c //
+
+void	data_to_b(t_array *data, int *pushed);
+void	data_to_a(t_array *data);
 
 #endif

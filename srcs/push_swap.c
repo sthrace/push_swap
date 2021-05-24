@@ -2,11 +2,11 @@
 
 int	main(int argc, char **argv)
 {
-	t_array data;
+	t_array	data;
 
 	ft_memset(&data, 0, sizeof(data));
 	if (argc == 1)
-		return(1);
+		return (1);
 	else
 	{
 		data.cnt_a = 0;
@@ -17,8 +17,10 @@ int	main(int argc, char **argv)
 			sort_3(&data);
 		else if (data.cnt_a < 6)
 			sort_5(&data);
+		else if (data.cnt_a < 101)
+			sort_100(&data, 20);
 		else
-			sort_100(&data);
+			sort_500(&data, 50);
 	}
 	return (0);
 }
