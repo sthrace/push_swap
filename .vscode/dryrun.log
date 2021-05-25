@@ -110,6 +110,7 @@ echo "\n\033[1;37mCOMPILED libft.a\033[0m"
 ar rc libft.a ./ft_atoi.o ./ft_atol.o ./ft_bzero.o ./ft_calloc.o ./ft_isalnum.o ./ft_isalpha.o ./ft_isascii.o ./ft_isdigit.o ./ft_isprint.o ./ft_memchr.o ./ft_memcmp.o ./ft_memcpy.o ./ft_memccpy.o ./ft_memmove.o ./ft_memset.o ./ft_strchr.o ./ft_strdup.o ./ft_strlcat.o ./ft_strlcpy.o ./ft_strlen.o ./ft_strncmp.o ./ft_strnstr.o ./ft_strrchr.o ./ft_tolower.o ./ft_toupper.o ./ft_substr.o ./ft_strjoin.o ./ft_strtrim.o ./ft_split.o ./ft_itoa.o ./ft_strmapi.o ./ft_putchar_fd.o ./ft_putstr_fd.o ./ft_putendl_fd.o ./ft_putnbr_fd.o ./ft_charjoin.o ./ft_gnl.o ./ft_itoa_base.o ./ft_nbrlen_base.o ./ft_putnbr_base_fd.o ./ft_realloc.o ./ft_strncmpul.o ./ft_lstnew.o ./ft_lstadd_front.o ./ft_lstsize.o ./ft_lstlast.o ./ft_lstadd_back.o ./ft_lstdelone.o ./ft_lstclear.o ./ft_lstiter.o ./ft_lstmap.o
 make[1]: Leaving directory `/Users/sthrace/42Cursus/push_swap/libft'
 echo "\n\033[1;36mCOMPILING push_swap checker\033[0m"
+ 
 clang -c -g3 -Wall -Werror -Wextra -o srcs/push_swap.o srcs/push_swap.c
 printf "\033[1;36m██"		
 clang -c -g3 -Wall -Werror -Wextra -o srcs/utils.o srcs/utils.c

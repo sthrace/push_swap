@@ -10,6 +10,9 @@ int	main(int argc, char **argv)
 	else
 	{
 		data.cnt_a = 0;
+		data.ops.ra = 0;
+		data.ops.rb = 0;
+		data.ops.rr = 0;
 		validate_array(argc, argv);
 		parse_argv(&data, argc, argv, 1);
 		check_dups(data);

@@ -5,6 +5,14 @@
 # include <stdio.h>
 # include <limits.h>
 
+typedef	struct s_ops
+{
+	int		ra;
+	int		rb;
+	int		rr;
+}			t_ops;
+
+
 typedef struct s_array
 {
     int     a[500];
@@ -14,6 +22,7 @@ typedef struct s_array
 	int		mid_a;
 	int		mid_b;
 	int		value;
+	t_ops	ops;
 }              t_array;
 
 // utils.c //
